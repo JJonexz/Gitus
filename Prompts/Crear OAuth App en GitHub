@@ -1,0 +1,125 @@
+🟢 PASO 1 — Preparar entorno local
+Instalá:
+XAMPP
+Después:
+Bash
+htdocs/
+ └── github-app/
+     ├── index.php
+     ├── callback.php
+     └── dashboard.php
+🟢 PASO 2 — Crear OAuth App en GitHub
+Ir a: 👉 https://github.com/settings/developers⁠�
+Crear nueva app:
+Application name: lo que quieras
+Homepage URL:
+
+http://localhost/github-app/
+Authorization callback URL:
+
+http://localhost/github-app/callback.php
+👉 Guardá:
+CLIENT_ID
+CLIENT_SECRET
+🟢 PASO 3 — Botón de login
+📄 index.php
+PHP
+<?php
+session_start();
+?>
+
+<a href="https://github.com/login/oauth/authorize?client_id=TU_CLIENT_ID&scope=repo">
+  Iniciar sesión con GitHub
+</a>
+👉 scope=repo = acceso completo a repos
+🟢 PASO 4 — Recibir el "code"
+📄 callback.php
+PHP
+<?php
+session_start();
+
+$code = $_GET['code'];
+
+$ch = curl_init("https://github.com/login/oauth/access_token");
+
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, [
+    "client_id" => "TU_CLIENT_ID",
+    "client_secret" => "TU_CLIENT_SECRET",
+    "code" => $code
+]);
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ["Accept: application/json"]);
+
+$response = curl_exec($ch);
+$data = json_decode($response, true);
+
+$_SESSION['access_token'] = $data['access_token'];
+
+header("Location: dashboard.php");
+🟢 PASO 5 — Crear dashboard
+📄 dashboard.php
+PHP
+<?php
+session_start();
+
+if (!isset($_SESSION['access_token'])) {
+    die("No autorizado");
+}
+
+$token = $_SESSION['access_token'];
+
+$ch = curl_init("https://api.github.com/user/repos");
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    "Authorization: Bearer $token",
+    "User-Agent: MiApp"
+]);
+
+$response = curl_exec($ch);
+$repos = json_decode($response, true);
+?>
+
+<h1>Tus repositorios</h1>
+
+<ul>
+<?php foreach ($repos as $repo): ?>
+    <li><?= $repo['name'] ?></li>
+<?php endforeach; ?>
+</ul>
+🟢 PASO 6 — Probar todo
+Ir a:
+
+http://localhost/github-app/
+Click en login
+Autorizar en GitHub
+Ver repos en pantalla ✅
+🧠 🔐 PASO 7 — Entender qué pasó
+Cuando el usuario inicia sesión:
+✔️ GitHub le pide permiso
+✔️ Vos recibís un token
+✔️ Ese token te deja actuar como ese usuario
+👉 Esto es clave:
+no ves su contraseña, solo permisos
+⚠️ SEGURIDAD (MUY IMPORTANTE)
+❌ Nunca:
+mostrar el token en pantalla
+guardar el token en JS
+subir el client_secret a GitHub
+✅ Siempre:
+usar sesiones PHP
+backend maneja todo
+usar HTTPS (cuando subas a producción)
+🚀 EXTENSIONES (SIGUIENTE NIVEL)
+Cuando esto funcione, podés agregar:
+📂 Ver archivos
+Bash
+GET /repos/{user}/{repo}/contents
+✍️ Editar archivos
+Bash
+PUT /repos/{user}/{repo}/contents/file.txt
+📦 Crear repos
+Bash
+POST /user/repos
