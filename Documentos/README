@@ -1,0 +1,123 @@
+# README - GITUS
+
+## Descripción del Proyecto
+
+**GITUS** es un sistema web orientado al entorno educativo que integra la API de GitHub para facilitar la gestión, seguimiento y evaluación de proyectos académicos. Su objetivo principal es simplificar el uso de GitHub para alumnos, profesores y directivos, proporcionando una interfaz más intuitiva y adaptada al contexto escolar.
+
+---
+
+## Objetivos del Sistema
+
+* Implementar la API de GitHub en un entorno web amigable.
+* Facilitar la creación, gestión y seguimiento de proyectos académicos.
+* Mejorar la experiencia de uso de GitHub para usuarios con menor experiencia técnica.
+* Centralizar la interacción entre alumnos, docentes y directivos.
+
+---
+
+## Problema a Resolver
+
+GitHub, aunque potente, presenta una curva de aprendizaje elevada para usuarios sin experiencia previa.
+**GITUS** busca reducir esta complejidad mediante:
+
+* Interfaces simplificadas.
+* Funcionalidades adaptadas al ámbito educativo.
+* Automatización de procesos clave.
+
+---
+
+## Procesos a Mejorar / Automatizar
+
+* Creación y gestión de repositorios.
+* Seguimiento de proyectos académicos.
+* Evaluación y supervisión docente.
+* Interacción mediante comentarios temporales.
+* Búsqueda y filtrado de usuarios.
+
+---
+
+## Usuarios del Sistema
+
+* **Alumnos:** creación y gestión de proyectos.
+* **Profesores:** supervisión, evaluación y descarga de proyectos.
+* **Directivos:** seguimiento general y emisión de comentarios importantes.
+
+Cantidad estimada de usuarios: toda la comunidad escolar.
+
+---
+
+## Gestión de Información
+
+### Datos a almacenar
+
+* Información de repositorios (vía API de GitHub).
+* Usuarios y roles dentro del sistema.
+* Comentarios temporales (persistencia de 72 horas).
+* Historial de actividad.
+
+### Datos indispensables
+
+* Vinculación con cuentas de GitHub.
+* Sistema de búsqueda de usuarios.
+* Gestión de roles (alumno, profesor, directivo).
+* Interfaz intuitiva para navegación.
+
+### Seguridad
+
+* Autenticación segura vinculada a GitHub.
+* Protección contra vulnerabilidades en login (ej: ataques por enlaces).
+* Sistema de recuperación de contraseñas.
+* Control de permisos según rol.
+
+---
+
+## Funcionalidades Principales
+
+* Integración completa con la API de GitHub.
+* Creación y gestión de proyectos desde una interfaz simplificada.
+* Sistema de comentarios con expiración (72h).
+* Buscador avanzado de usuarios.
+* Panel de control para docentes y directivos.
+* Gestión de roles y permisos.
+
+---
+
+## Requisitos No Funcionales
+
+* Alta facilidad de uso (UX/UI prioritaria).
+* Aplicación web responsive (adaptable a móviles).
+* Seguridad robusta (login, cifrado, control de accesos).
+* Buen rendimiento y escalabilidad para uso institucional.
+
+---
+
+## Interfaz y Diseño
+
+* Identidad visual basada en GitHub.
+* Logo propio: GITUS.
+* Diseño moderno, minimalista y enfocado en la usabilidad.
+* Interfaz clara y accesible para todos los niveles de usuario.
+
+---
+
+## Validación de Prototipos
+
+* Elementos indispensables:
+
+  * Logo del sistema.
+  * Navegación intuitiva.
+  * Paneles claros para cada rol.
+
+* Cambios sugeridos:
+
+  * Sin cambios definidos actualmente.
+
+---
+
+## Equipo de Desarrollo
+
+* Julian Alexis Rios — Project Manager
+* Maximo Thiago Estigarribia — Backend Developer
+* Jairo Llanes Yelma — Frontend Developer
+
+---
