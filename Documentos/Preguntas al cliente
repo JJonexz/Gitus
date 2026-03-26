@@ -1,0 +1,52 @@
+## Sobre el negocio y objetivos
+
+- ¿Cuál es el objetivo principal del sistema? - implementar api de github en un sitio web o cliente para que sea mas facil manipularlo
+    
+- ¿Qué problema busca resolver? - resolver la dificultad de usar github
+    
+- ¿Qué procesos actuales desea mejorar o automatizar? - sirve para que todo esto sea mas intuitivo el uso y manipulacion de las funcionalidades de la misma
+    
+
+## Sobre los usuarios
+
+- ¿Quiénes serán los usuarios principales del sistema? - Alumnos crear proyectos - Profesores para supervisar proyectos, descargar - directivos comentarios importantes
+    
+- ¿Cuántos usuarios estima que utilizarán el sistema? - Escuela completa
+    
+
+## Sobre la información y datos
+
+- ¿Qué tipo de información necesita almacenar? - mismas funcionalidades de github agregando cosas para diferenciar entre la misma con comentarios por ejemplo en bdd que duren 72h, que puedas filtrar en el buscador para buscar usuarios
+    
+- ¿Qué datos son indispensables para su operación? - buscador de usuarios, vinculacion con api - registro de roles y intuitivita 
+    
+- ¿Qué nivel de seguridad requiere para los datos? - cuanta escolar vinculada a cuenta de github
+    
+
+## Sobre funcionalidades
+
+- ¿Qué funciones considera esenciales? - vinculacion con github con su api y sencillez
+    
+
+---
+
+# Requisitos No Funcionales
+
+- ¿Qué tan importante es la facilidad de uso? - muy importante
+    
+- ¿Debe funcionar en navegadores web, móviles o ambos? - Navegadores Web siendo responsive para movil y crear la app en base la pagina
+    
+- ¿Qué medidas de seguridad espera (login, permisos, cifrado)? - Login y register sin vulnerabilida por link - recuperacion de contraseña
+    
+
+---
+
+# Validación con Prototipos
+
+- ¿Qué elementos considera indispensables en la interfaz? - Logo Propio - Gitus
+    
+- ¿Qué cambios sugeriría en los prototipos iniciales? - nada concreto
+    
+- ¿Qué colores usar? - Acorde a la Identidad de GitHub
+
+---
