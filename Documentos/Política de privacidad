@@ -1,0 +1,212 @@
+# Política de Privacidad - GITUS
+
+## 1. Introducción
+
+La presente Política de Privacidad describe cómo el sistema **GITUS** recopila, utiliza, almacena y protege los datos personales de sus usuarios, en cumplimiento con la normativa vigente en la República Argentina, especialmente la Ley N.º 25.326 de Protección de Datos Personales.
+
+El uso del sistema implica la aceptación de esta política.
+
+---
+
+## 2. Responsable del Tratamiento de Datos
+
+El responsable del tratamiento de los datos personales es el equipo desarrollador de **GITUS**, en el marco de su implementación dentro de la institución educativa correspondiente.
+
+Para consultas o solicitudes relacionadas con datos personales, el usuario podrá dirigirse a los administradores del sistema designados por la institución.
+
+---
+
+## 3. Datos que se Recopilan
+
+GITUS podrá recopilar los siguientes datos:
+
+### 3.1 Datos de Identificación
+
+* Nombre y apellido
+* Nombre de usuario
+* Correo electrónico
+
+### 3.2 Datos de Cuenta Vinculada
+
+* Información proveniente de la cuenta de GitHub (usuario, repositorios, actividad)
+
+### 3.3 Datos Académicos
+
+* Proyectos creados
+* Actividad dentro del sistema
+* Evaluaciones o comentarios docentes
+
+### 3.4 Datos Técnicos
+
+* Dirección IP
+* Tipo de navegador
+* Registros de acceso (logs)
+
+---
+
+## 4. Finalidad del Tratamiento
+
+Los datos personales serán utilizados para:
+
+* Gestionar cuentas de usuario.
+* Permitir la vinculación con GitHub.
+* Facilitar la creación y seguimiento de proyectos.
+* Permitir la supervisión académica.
+* Mejorar la experiencia del usuario.
+* Garantizar la seguridad del sistema.
+
+En ningún caso los datos serán utilizados con fines comerciales.
+
+---
+
+## 5. Base Legal
+
+El tratamiento de los datos se basa en:
+
+* El consentimiento del usuario.
+* La necesidad de cumplir fines educativos.
+* El cumplimiento de obligaciones legales.
+
+Conforme al Artículo 5 de la Ley 25.326, el tratamiento requiere consentimiento libre, expreso e informado.
+
+---
+
+## 6. Consentimiento
+
+Al registrarse y utilizar GITUS, el usuario otorga su consentimiento para:
+
+* La recolección de sus datos.
+* La vinculación con servicios externos (GitHub).
+* El almacenamiento y procesamiento de la información.
+
+El usuario podrá revocar su consentimiento en cualquier momento.
+
+---
+
+## 7. Conservación de los Datos
+
+Los datos serán conservados:
+
+* Mientras la cuenta esté activa.
+* Mientras sean necesarios para fines académicos.
+
+Condiciones específicas:
+
+* Comentarios temporales: se eliminan automáticamente luego de 72 horas.
+* Datos eliminados por el usuario: serán suprimidos en plazos razonables.
+
+---
+
+## 8. Seguridad de la Información
+
+GITUS adopta medidas técnicas y organizativas para proteger los datos:
+
+* Cifrado de información sensible.
+* Control de accesos por roles.
+* Protección contra accesos no autorizados.
+* Monitoreo de actividad.
+
+Conforme al Artículo 9 de la Ley 25.326, se garantiza un nivel adecuado de seguridad.
+
+---
+
+## 9. Confidencialidad
+
+Todos los datos personales serán tratados con estricta confidencialidad.
+
+Las personas que accedan a la información:
+
+* Están obligadas a guardar secreto profesional.
+* No podrán divulgar datos sin autorización.
+
+Según lo establecido en el Artículo 10 de la Ley 25.326.
+
+---
+
+## 10. Derechos del Titular de los Datos
+
+El usuario tiene derecho a:
+
+* Acceder a sus datos personales.
+* Solicitar la rectificación de datos incorrectos.
+* Solicitar la actualización de información.
+* Solicitar la eliminación de sus datos.
+
+El ejercicio de estos derechos podrá realizarse mediante solicitud a los administradores del sistema.
+
+---
+
+## 11. Transferencia de Datos
+
+GITUS no venderá ni cederá datos personales a terceros.
+
+Excepciones:
+
+* Cuando sea requerido por autoridad competente.
+* Cuando sea necesario para la integración con GitHub (servicio externo).
+
+---
+
+## 12. Servicios de Terceros
+
+El sistema utiliza la API de GitHub, lo cual implica:
+
+* Intercambio de datos con dicha plataforma.
+* Sujeción a sus propias políticas de privacidad.
+
+GITUS no controla el tratamiento de datos realizado por terceros.
+
+---
+
+## 13. Uso de Cookies
+
+GITUS podrá utilizar cookies para:
+
+* Mantener sesiones activas.
+* Mejorar la experiencia del usuario.
+* Analizar el uso del sistema.
+
+El usuario puede configurar su navegador para rechazar cookies.
+
+---
+
+## 14. Menores de Edad
+
+Dado que el sistema está orientado a una institución educativa:
+
+* El uso por menores de edad se realiza bajo supervisión institucional.
+* La institución actúa como intermediaria en la gestión de datos.
+
+---
+
+## 15. Cambios en la Política de Privacidad
+
+GITUS se reserva el derecho de modificar esta política en cualquier momento.
+
+Las modificaciones serán notificadas a los usuarios mediante el sistema.
+
+---
+
+## 16. Autoridad de Aplicación
+
+La autoridad de control en materia de protección de datos personales en Argentina es la Agencia de Acceso a la Información Pública (AAIP).
+
+El titular de los datos podrá presentar denuncias ante dicho organismo si considera vulnerados sus derechos.
+
+---
+
+## 17. Aceptación de la Política
+
+El uso del sistema implica:
+
+* La aceptación de esta Política de Privacidad.
+* El consentimiento para el tratamiento de datos.
+* El conocimiento de los derechos del usuario.
+
+---
+
+## 18. Contacto
+
+Para consultas sobre esta política o sobre el tratamiento de datos, el usuario deberá comunicarse con los responsables del sistema dentro de la institución educativa.
+
+---
