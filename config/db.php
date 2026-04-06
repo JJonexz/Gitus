@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$dbname = "gitus";
+$dbname = "gitus"; 
 $user = "root";
 $password = "";
 
@@ -10,6 +10,4 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     die("Error DB");
-}
-
-// Hola
+    }

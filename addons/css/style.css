@@ -1,268 +1,341 @@
-/* RESET */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* BODY */
-
-body{
-font-family:'Segoe UI',sans-serif;
-
-/* Paleta estilo GitHub dark */
-background:linear-gradient(
-135deg,
-#0d1117,
-#161b22,
-#1f2937,
-#111827
-);
-
-background-size:200% 200%;
-animation:gradientBG 28s linear infinite;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-min-height:100vh;
+html, body {
+  height: 100%;
 }
 
-/* ANIMACIÓN FONDO (más liviana) */
+/* =============================================
+   BODY — fondo estático institucional
+   Sin animación de gradiente: más liviano en
+   dispositivos viejos y mobiles lentos.
+============================================= */
 
-@keyframes gradientBG{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+
+  /* Paleta inspirada en GitHub Dark */
+  background-color: #0d1117;
+
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(88,166,255,0.06), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(46,160,67,0.05), transparent 40%),
+    linear-gradient(180deg, #0d1117 0%, #0b0f14 100%);
+
+  color: #c9d1d9;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  min-height: 100vh;
+  padding: 60px 16px 40px;
+
+  /* suaviza el render visual */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* =============================================
+   CONTENEDOR EXTERNO
+   overflow:hidden es el que "recorta" el slider
+============================================= */
 
-/* SLIDER OPTIMIZADO */
-
-.auth-slider{
-display:flex;
-width:200%;
-
-transition:transform .45s cubic-bezier(.4,0,.2,1);
-
-/* optimización GPU */
-will-change:transform;
-transform:translate3d(0,0,0);
+.auth-wrapper {
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;         /* oculta la tarjeta fuera de vista */
+  border-radius: 16px;
 }
 
-/* TRANSICIÓN */
+/* =============================================
+   SLIDER
+   Siempre el doble del wrapper para contener
+   las dos tarjetas lado a lado.
+   — NUNCA cambia en mobile, solo cambia el padding
+     de las tarjetas.
+============================================= */
 
-.show-register .auth-slider{
-transform:translate3d(-50%,0,0);
+.auth-slider {
+  display: flex;
+  width: 200%;                         /* contiene las 2 tarjetas */
+  align-items: stretch;
+
+  /* transición liviana: transform es 100% GPU */
+  transition: transform 0.4s ease;
+  transform: translateX(0);
+
+  /* aceleración GPU sin will-change (más compatible) */
+  transform: translate3d(0, 0, 0);
 }
 
-/* WRAPPER */
-
-.auth-wrapper{
-position:relative;
-width:100%;
-max-width:420px;
-overflow:hidden;
+/* Cuando se activa el panel de registro */
+.show-register .auth-slider {
+  transform: translate3d(-50%, 0, 0);
 }
 
-/* SLIDER */
+/* =============================================
+   TARJETAS
+   — Sin backdrop-filter: era costoso en mobiles viejos
+   — Fondo blanco sólido + sombra sutil
+   — flex:0 0 50% del slider = 100% del wrapper
+============================================= */
 
-.auth-slider{
-display:flex;
-width:200%;
-transition:transform .6s ease;
+.auth-card {
+  flex: 0 0 50%;            /* mitad del slider = toda la ventana visible */
+  width: 50%;
+
+  padding: 32px 30px 28px;
+
+  background: #ffffff;
+  border-radius: 0;         /* el border-radius lo lleva el wrapper */
+
+  box-shadow: none;         /* la sombra la lleva el wrapper */
+
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
 }
 
-.show-register .auth-slider{
-transform:translateX(-50%);
+/* Sombra en el contenedor, no en cada tarjeta */
+.auth-wrapper {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
-/* TARJETA */
+/* =============================================
+   ENCABEZADO INSTITUCIONAL
+============================================= */
 
-.auth-card{
-width:50%;
-padding:40px;
-
-background:rgba(255,255,255,0.55);
-backdrop-filter:blur(15px);
--webkit-backdrop-filter:blur(15px);
-
-border-radius:16px;
-border:1px solid rgba(255,255,255,0.4);
-
-box-shadow:0 10px 40px rgba(0,0,0,0.15);
-
-transition:.3s;
+.auth-logo {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a2744;
+  margin-bottom: 4px;
+  opacity: 0.6;
 }
 
-.auth-card:hover{
-transform:translateY(-3px);
-box-shadow:0 15px 45px rgba(0,0,0,0.2);
+.auth-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a2744;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e8ecf4;
 }
 
-/* LOGO */
+/* =============================================
+   FORMULARIO
+============================================= */
 
-.auth-logo{
-text-align:center;
-font-size:26px;
-font-weight:700;
-color:#ffffff;
-margin-bottom:8px;
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
 }
 
-/* TITULO */
-
-.auth-title{
-text-align:center;
-font-size:22px;
-font-weight:600;
-margin-bottom:22px;
-color:#f0f0f0;
+/* Labels (si los usás) */
+.auth-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 2px;
+  display: block;
 }
 
-/* FORM */
+/* Inputs — sin blur, sin glassmorphism */
+.auth-form input {
+  width: 100%;
+  padding: 11px 13px;
 
-.auth-form{
-display:flex;
-flex-direction:column;
-gap:16px;
+  border-radius: 6px;
+  border: 1.5px solid #d1d9e6;
+
+  background: #f8fafc;
+  color: #1a2744;
+
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+
+  /* transición solo en border/shadow: más liviana */
+  transition: border-color 0.18s, box-shadow 0.18s;
 }
 
-/* INPUTS */
-
-.auth-form input{
-width:100%;
-padding:12px;
-
-border-radius:8px;
-border:1px solid rgba(0,0,0,0.1);
-
-background:rgba(255,255,255,0.8);
-
-font-size:14px;
-outline:none;
-
-transition:.2s;
+.auth-form input:focus {
+  border-color: #1a2744;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(26, 39, 68, 0.1);
 }
 
-.auth-form input:focus{
-border-color:#7ecbff;
-box-shadow:0 0 5px rgba(126,203,255,0.5);
+.auth-form input::placeholder {
+  color: #9ca3af;
 }
 
-/* BOTON PRINCIPAL */
+/* =============================================
+   BOTÓN PRINCIPAL
+============================================= */
 
-.auth-btn{
-width:100%;
-padding:12px;
-margin-top:10px;
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
 
-border:none;
-border-radius:8px;
+  border: none;
+  border-radius: 6px;
 
-background:linear-gradient(135deg,#212830,#2b353f);
+  background: #238636;
+  color: #ffffff;
 
-color:white;
-font-weight:600;
-font-size:15px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: inherit;
+  letter-spacing: 0.03em;
 
-cursor:pointer;
+  cursor: pointer;
 
-transition:.2s;
+  /* solo transform + shadow: GPU-friendly */
+  transition: background 0.18s, transform 0.15s, box-shadow 0.15s;
 }
 
-.auth-btn:hover{
-transform:translateY(-1px);
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+.auth-btn:hover {
+  background: #279727;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26, 39, 68, 0.25);
 }
 
-/* BOTON CAMBIO LOGIN/REGISTER */
-
-.auth-switch{
-width:100%;
-margin-top:10px;
-padding:12px;
-
-border:none;
-border-radius:8px;
-
-background:#238636;
-color:white;
-
-font-size:15px;
-font-weight:600;
-
-cursor:pointer;
-
-transition:.2s;
+.auth-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
-.auth-switch:hover{
-background:#26913b;
+/* =============================================
+   BOTÓN CAMBIO LOGIN / REGISTRO
+============================================= */
+
+.auth-switch {
+  width: 100%;
+  margin-top: 10px;
+  padding: 11px;
+
+  border: 1.5px solid #1a2744;
+  border-radius: 6px;
+
+  background: transparent;
+  color: #1a2744;
+
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: background 0.18s, color 0.18s;
 }
 
-/* LINKS */
-
-.auth-link{
-text-align:center;
-margin-top:14px;
+.auth-switch:hover {
+  background: #212830;
+  color: #ffffff;
 }
 
-/* MENSAJES */
+/* =============================================
+   MENSAJES DE ESTADO
+============================================= */
 
-.auth-message{
-background:#fef3c7;
-border:1px solid #fcd34d;
-padding:10px;
-border-radius:6px;
-font-size:14px;
-text-align:center;
+.auth-message {
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid #fcd34d;
+  background: #fef3c7;
+  color: #92400e;
 }
 
-.auth-error{
-background:#fee2e2;
-border:1px solid #fca5a5;
-color:#991b1b;
+.auth-error {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #991b1b;
 }
 
-/* FOOTER */
-
-.auth-footer{
-text-align:center;
-margin-top:18px;
-font-size:12px;
-color:#6b7280;
+.auth-success {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #166534;
 }
 
-/* RESPONSIVE */
+/* =============================================
+   LINKS Y FOOTER
+============================================= */
 
-@media (max-width:480px){
-
-body{
-align-items:flex-start;
-padding-top:40px;
+.auth-link {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 13px;
+  color: #6b7280;
 }
 
-.auth-wrapper{
-width:100%;
-padding:14px;
+.auth-link a {
+  color: #1a2744;
+  font-weight: 600;
+  text-decoration: none;
 }
 
-.auth-card{
-padding:30px 22px;
+.auth-link a:hover {
+  text-decoration: underline;
 }
 
-.auth-form input{
-font-size:16px;
-padding:14px;
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 11px;
+  color: #9ca3af;
+  letter-spacing: 0.03em;
 }
 
-.auth-btn,
-.auth-switch{
-font-size:16px;
-padding:14px;
-}
+/* =============================================
+   RESPONSIVE
+   El slider SIEMPRE es 200%, no cambia.
+   Solo ajustamos padding y tamaños de fuente.
+============================================= */
 
+@media (max-width: 480px) {
+
+  body {
+    padding: 24px 0 32px;
+    align-items: flex-start;
+  }
+
+  /* El wrapper ocupa todo el ancho */
+  .auth-wrapper {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* El slider sigue siendo 200% — no tocar */
+  /* .auth-slider { } → sin cambios */
+
+  /* Las tarjetas siguen siendo 50% del slider → correcto */
+  .auth-card {
+    padding: 28px 20px 24px;
+  }
+
+  .auth-form input {
+    font-size: 16px;   /* evita zoom automático en iOS */
+    padding: 13px;
+  }
+
+  .auth-btn,
+  .auth-switch {
+    font-size: 15px;
+    padding: 13px;
+  }
 }
